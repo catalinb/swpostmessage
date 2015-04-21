@@ -14,5 +14,5 @@ navigator.serviceWorker.ready.then(function(sw) {
 });
 
 navigator.serviceWorker.onmessage = function(msg) {
-  console.log('MESSAGE RECEIVED', JSON.stringify(msg));
+  console.log('MESSAGE RECEIVED', msg.data);
 };

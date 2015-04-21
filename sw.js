@@ -27,13 +27,18 @@ this.addEventListener('activate', function() {
 
 this.addEventListener('fetch', function(e) {
   debug('onfetch ' + e.request.url);
+  client().then(function(c) {
+    debug('CLIENT ' + c);
+    c.postMessage('using client before receiving message');
+  });
 });
 
 this.addEventListener('message', function(msg) {
   debug('GOT MESSAGE ' + msg.data);
 
   client().then(function(c) {
-    c.postMessage('using client');
+    debug('CLIENT WITHIN MESSAGE HANDLER ' + c);
+    c.postMessage('using client after receiving message');
   });
   msg.source.postMessage('using msg.source');
 });

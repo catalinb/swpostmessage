@@ -1,0 +1,10 @@
+{
+  "name": "SW postmessage test",
+  "description": "Service Workers B2G test",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "http://github.com/mozilla-b2g/gaia"
+  },
+  "default_locale": "en"
+}

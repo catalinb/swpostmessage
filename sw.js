@@ -6,7 +6,7 @@ var _client;
 
 function client() {
   if (_client) {
-    debug('have _client');
+    debug('have _client: ' + _client.id);
     return Promise.resolve(_client);
   }
   return self.clients.matchAll().then(function(clients) {
@@ -36,7 +36,7 @@ this.addEventListener('fetch', function(e) {
 });
 
 this.addEventListener('message', function(msg) {
-  debug('GOT MESSAGE ' + msg.data);
+  debug('GOT MESSAGE ' + msg.data + ", from=" + msg.source.id);
 
   client().then(function(c) {
     debug('CLIENT WITHIN MESSAGE HANDLER ' + c);

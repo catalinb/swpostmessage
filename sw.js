@@ -43,5 +43,9 @@ this.addEventListener('message', function(msg) {
     debug('CLIENT WITHIN MESSAGE HANDLER ' + c);
     c.postMessage('using client after receiving message');
   });
-  msg.source.postMessage('using msg.source');
+  if (msg.source) {
+    msg.source.postMessage('using msg.source');
+  } else {
+    debug("msg.source is null");
+  }
 });

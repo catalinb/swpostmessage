@@ -29,7 +29,6 @@ this.addEventListener('activate', function() {
 
 this.addEventListener('fetch', function(e) {
   debug('onfetch ' + e.request.url);
-  debug('fetch.client=' + e.client);
   client().then(function(c) {
     debug('CLIENT ' + c);
     c.postMessage('using client before receiving message');

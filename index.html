@@ -8,6 +8,9 @@
       navigator.serviceWorker.onmessage = function (e) {
         console.log("INITIAL HANDLER GOT: " + e.data);
       }
+      window.onmessage = function(e) {
+        console.log("INITIAL HANDLER GOT: " + e.data);
+      }
     </script>
 		<script defer src="test.js"></script>
 	</head>

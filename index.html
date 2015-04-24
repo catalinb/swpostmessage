@@ -4,6 +4,11 @@
 		<meta charset="utf-8">
 		<title>Service Worker B2G Test</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <script>
+      navigator.serviceWorker.onmessage = function (e) {
+        console.log("INITIAL HANDLER GOT: " + e.data);
+      }
+    </script>
 		<script defer src="test.js"></script>
 	</head>
   <body>

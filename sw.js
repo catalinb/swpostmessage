@@ -10,10 +10,10 @@ function client() {
     return Promise.resolve(_client);
   }
   return self.clients.matchAll().then(function(clients) {
+    debug("LENGTH:" +clients.length);
     if (!clients.length) {
       return Promise.reject();
     }
-    debug("LENGTH:" +clients.length);
     _client = clients[0];
     return _client;
   });

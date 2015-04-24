@@ -6,12 +6,14 @@ var _client;
 
 function client() {
   if (_client) {
+    debug('have _client');
     return Promise.resolve(_client);
   }
   return self.clients.matchAll().then(function(clients) {
     if (!clients.length) {
       return Promise.reject();
     }
+    debug("LENGTH:" +clients.length);
     _client = clients[0];
     return _client;
   });
@@ -27,6 +29,7 @@ this.addEventListener('activate', function() {
 
 this.addEventListener('fetch', function(e) {
   debug('onfetch ' + e.request.url);
+  debug('fetch.client=' + e.client);
   client().then(function(c) {
     debug('CLIENT ' + c);
     c.postMessage('using client before receiving message');

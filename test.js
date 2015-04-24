@@ -16,3 +16,7 @@ navigator.serviceWorker.ready.then(function(sw) {
 navigator.serviceWorker.onmessage = function(msg) {
   console.log('MESSAGE RECEIVED', msg.data);
 };
+
+window.onmessage = function(msg) {
+  console.log('MESSAGE RECEIVED', msg.data);
+};

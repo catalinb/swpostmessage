@@ -41,10 +41,10 @@ this.addEventListener('message', function(msg) {
 
   client().then(function(c) {
     debug('CLIENT WITHIN MESSAGE HANDLER ' + c);
-    c.postMessage('using client after receiving message');
+    //c.postMessage('using client after receiving message');
   });
   if (msg.source) {
-    msg.source.postMessage('using msg.source');
+    //msg.source.postMessage('using msg.source');
   } else {
     debug("msg.source is null");
   }
